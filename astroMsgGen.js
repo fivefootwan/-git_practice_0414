@@ -2,10 +2,21 @@
 const cleanUserInput = (userInput) => {
     const userInputCleaned = userInput.toLowerCase().trim();
     
-    if (userInputCleaned === 'aries' ||userInputCleaned === 'taurus' || userInputCleaned === 'gemini' ||userInputCleaned === 'cancer' ||userInputCleaned === 'leo' ||userInputCleaned === 'virgo' ||userInputCleaned === 'libra' ||userInputCleaned === 'scorpio' ||userInputCleaned === 'sagittarius' ||userInputCleaned === 'capricorn' ||userInputCleaned === 'aquarius' ||userInputCleaned === 'pisces') { 
+    /*if (userInputCleaned === 'aries' ||userInputCleaned === 'taurus' || userInputCleaned === 'gemini' ||userInputCleaned === 'cancer' ||userInputCleaned === 'leo' ||userInputCleaned === 'virgo' ||userInputCleaned === 'libra' ||userInputCleaned === 'scorpio' ||userInputCleaned === 'sagittarius' ||userInputCleaned === 'capricorn' ||userInputCleaned === 'aquarius' ||userInputCleaned === 'pisces') { 
         return userInputCleaned ;
     } else {return 'hmmm....not an astro sign!'}
-};
+*/
+
+    const validSigns = [
+    'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo',
+    'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'
+  ];
+
+  return validSigns.includes(userInputCleaned)
+    ? userInputCleaned
+    : 'hmmm....not an astro sign!';
+
+}
 
 const userAstro = cleanUserInput('virgo'); // ‼️ INPUT SIGN HERE ONCE
 console.log(`User's sign is: ` + userAstro);
@@ -219,6 +230,4 @@ const part3dtb = {
   };
 
 const part3 = getRandom(part3dtb[userAstro]); 
-console.log(part1 + part2 + part3 + part4 + part5);
-
-  
+console.log(part1 + part2 + part3 + part4 + part5)
