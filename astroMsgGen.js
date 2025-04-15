@@ -18,7 +18,7 @@ const cleanUserInput = (userInput) => {
 
 }
 
-const userAstro = cleanUserInput('virgo'); // ‼️ INPUT SIGN HERE ONCE
+const userAstro = cleanUserInput('balhhh'); // ‼️ INPUT SIGN HERE ONCE
 console.log(`User's sign is: ` + userAstro);
 
 // function to get random + can be reused
@@ -229,5 +229,32 @@ const part3dtb = {
     ]
   };
 
-const part3 = getRandom(part3dtb[userAstro]); 
-console.log(part1 + part2 + part3 + part4 + part5)
+// const part3 = getRandom(part3dtb[userAstro]); 
+let part3;
+if (part3dtb[userAstro]) {
+  part3 = getRandom(part3dtb[userAstro]);
+} else {
+  part3 = '';
+}
+
+
+const message = (part1 + part2 + part3 + part4 + part5);
+
+/*let finalMessage;
+if (typeof message === 'string') {
+  finalMessage = message;
+} else {
+  finalMessage = 'astro sign incorrect';
+}*/
+
+let finalMessage;
+if (part3dtb[userAstro]) {
+  const part3 = getRandom(part3dtb[userAstro]);
+  const message = part1 + part2 + part3 + part4 + part5;
+  finalMessage = message;
+} else {
+  finalMessage = 'astro sign incorrect';
+}
+
+
+console.log(finalMessage)
